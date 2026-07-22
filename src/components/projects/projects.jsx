@@ -13,7 +13,7 @@ const projects = [
     description:
       "A modern restaurant management platform with table booking, menu management and responsive dashboard.",
 
-    image: "/public/images/rms.png",
+    image: "public/images/rms.jpg",
 
     technologies: [
       "React",
@@ -32,7 +32,7 @@ const projects = [
     description:
       "An intelligent AI chatbot with OpenAI integration, voice support and file upload functionality.",
 
-    image: "/public/images/ChatGPT Image Jul 15, 2026, 10_39_30 AM.png",
+    image: "public/images/chatbot.jpg",
 
     technologies: [
       "React",
@@ -51,7 +51,7 @@ const projects = [
     description:
       "Fully responsive ecommerce website with authentication, cart system and payment integration.",
 
-    image: "/public/images/ChatGPT Image Jul 15, 2026, 10_44_33 AM.png",
+    image: "public/images/ecommerce.webp",
 
     technologies: [
       "React",
@@ -71,7 +71,7 @@ const projects = [
     description:
       "Interactive developer portfolio with animations, glassmorphism and responsive UI.",
 
-    image: "/public/images/ChatGPT Image Jul 15, 2026, 10_39_30 AM.png",
+    image: "public/images/hq720.jpg",
 
     technologies: [
       "React",
