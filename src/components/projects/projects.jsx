@@ -71,7 +71,7 @@ const projects = [
     description:
       "Interactive developer portfolio with animations, glassmorphism and responsive UI.",
 
-    image: "public/images/hq720.jpg",
+    image: "/images/hq720.jpg",
 
     technologies: [
       "React",
