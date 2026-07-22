@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Experience.css
+   Same design language as About.css — dark navy base, violet + mint
+   accents, cards with scan-line hover, staggered fade-up reveal.
+   ========================================================================== */
+
+:root {
+  --exp-bg: #0b0e1a;
+  --exp-surface: #12162b;
+  --exp-accent: #6c63ff;
+  --exp-accent-2: #00e5a0;
+  --exp-text: #e8e9f3;
+  --exp-muted: #8b90b3;
+  --exp-border: rgba(232, 233, 243, 0.1);
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+.experience {
+  position: relative;
+  overflow: hidden;
+  background: var(--exp-bg);
+  color: var(--exp-text);
+  font-family: var(--font-body);
+  padding: 6rem 1.5rem 7rem;
+}
+
+.experience::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.35), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.experience::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: -140px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 160, 0.28), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Heading
+   ========================================================================== */
+
+.experience-heading {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.experience-heading span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--exp-accent-2);
+  background: rgba(0, 229, 160, 0.08);
+  border: 1px solid rgba(0, 229, 160, 0.3);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.experience-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, var(--exp-text), var(--exp-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.experience-heading p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--exp-muted);
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+/* ==========================================================================
+   Timeline -> card grid (same visual system as .about-card)
+   ========================================================================== */
+
+.timeline {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  width: 100%;
+  animation: fadeUp 0.6s ease both;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.15s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.45s; }
+
+/* left/right modifiers no longer change layout, kept for compatibility */
+.timeline-item.left,
+.timeline-item.right {
+  text-align: left;
+}
+
+.timeline-content {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background: var(--exp-surface);
+  border: 1px solid var(--exp-border);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(0, 229, 160, 0.08) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.timeline-content:hover::before {
+  transform: translateX(35%);
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px);
+  border-color: rgba(108, 99, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-content .year {
+  display: inline-block;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--exp-accent-2);
+  background: rgba(0, 229, 160, 0.08);
+  border: 1px solid rgba(0, 229, 160, 0.25);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--exp-text);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--exp-muted);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Keyframes
+   ========================================================================== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .experience {
+    padding: 4.5rem 1rem 5rem;
+  }
+
+  .experience-heading {
+    margin-bottom: 2.75rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-content {
+    padding: 1.4rem 1.25rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-heading,
+  .timeline-item,
+  .timeline-content {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}

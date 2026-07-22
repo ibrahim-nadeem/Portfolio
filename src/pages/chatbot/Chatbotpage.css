@@ -1,0 +1,124 @@
+:root {
+  --cb-bg: #0b0c10;
+  --cb-panel: #14161c;
+  --cb-panel-2: #101217;
+  --cb-line: rgba(255, 255, 255, 0.08);
+  --cb-ink: #eef0f4;
+  --cb-ink-dim: #8b8f9c;
+  --cb-signal: #ff8a3d;
+  --cb-signal-dim: rgba(255, 138, 61, 0.16);
+  --cb-teal: #35d7c0;
+  --cb-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  --cb-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.chatbot-page {
+  position: relative;
+  display: flex;
+   background: var(--cb-bg);
+  overflow: hidden;
+  isolation: isolate;
+  font-family: var(--cb-sans);
+  color: var(--cb-ink);
+}
+
+/* ---------------------------- Background ---------------------------- */
+
+.chatbot-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cb-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 70% 60% at 65% 30%, black 30%, transparent 80%);
+}
+
+.cb-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.2;
+  animation: cb-float 18s ease-in-out infinite;
+}
+
+.cb-orb-a {
+  width: 380px;
+  height: 380px;
+  top: -10%;
+  right: 20%;
+  background: var(--cb-signal);
+}
+
+.cb-orb-b {
+  width: 300px;
+  height: 300px;
+  bottom: -6%;
+  right: 6%;
+  background: var(--cb-teal);
+  animation-delay: -6s;
+}
+
+@keyframes cb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -18px) scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-orb { animation: none; }
+}
+
+/* ---------------------------- Main panel ---------------------------- */
+
+.chat-main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
+
+.chatbot-topbar {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.2rem 0;
+  flex-shrink: 0;
+}
+
+.topbar-sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1px solid var(--cb-line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--cb-ink-dim);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.topbar-sidebar-toggle svg { width: 16px; height: 16px; }
+
+.topbar-sidebar-toggle:hover {
+  background: var(--cb-signal-dim);
+  color: var(--cb-signal);
+}
+
+@media (max-width: 900px) {
+  .chatbot-topbar {
+    padding: 0.9rem 1.2rem 0;
+  }
+}
