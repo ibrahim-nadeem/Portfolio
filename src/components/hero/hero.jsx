@@ -188,18 +188,7 @@ const Hero = () => {
 
       {/* Scroll */}
 
-      <motion.div
-        className="scroll-down"
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-        }}
-      >
-        <span></span>
-      </motion.div>
+      
     </section>
   );
 };
