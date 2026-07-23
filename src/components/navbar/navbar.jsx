@@ -51,17 +51,17 @@ const Navbar = () => {
   return (
     <header className={scrolled ? "navbar navbar-scroll" : "navbar"}>
       <div className="logo">
-        <h2 onClick={() => handleScrollTo("hero")}>IBRAHIM</h2>
+        <h2 onClick={() => handleScrollTo("home")}>IBRAHIM</h2>
       </div>
 
       <ul className={menuOpen ? "nav-links active" : "nav-links"}>
         <li>
           <a
-            href="/#hero"
+            href="/#home"
             onClick={(e) => {
               e.preventDefault();
-              handleScrollTo("hero");
-              window.history.pushState({}, "", "/#hero");
+              handleScrollTo("home");
+              window.history.pushState({}, "", "/#home");
             }}
           >
             <span>Home</span>
