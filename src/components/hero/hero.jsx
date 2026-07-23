@@ -519,7 +519,7 @@ export default function HeroIbrahim({ videoSrc = "" }) {
               animationDelay: "0.3s",
             }}
           >
-            <VideoPanel src="/video/Creating Beautiful Fast Interactive React Experiences.mp4" />
+            <VideoPanel src="/video/Building Beautiful React and AI Experiences.mp4 " />
           </div>
         </div>
       </div>
