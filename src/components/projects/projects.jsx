@@ -81,6 +81,24 @@ const projects = [
 
  
    },
+   {
+    id: 5,
+
+    title: "Landing Page",
+
+    description:
+      "Interactive business landing page  with animations, glassmorphism and responsive UI.",
+
+    image: "/images/land.png",
+
+    technologies: [
+      "React",
+      "GSAP",
+      "CSS",
+    ],
+
+ 
+   },
 ];
 
 const Projects = () => {
