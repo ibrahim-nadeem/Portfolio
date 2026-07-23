@@ -392,6 +392,7 @@ export default function HeroIbrahim({ videoSrc = "" }) {
                 letterSpacing: 1.2,
                 color: "var(--cyan)",
                 marginBottom: 22,
+                marginTop:"20px",
                 textTransform: "uppercase",
               }}
             >

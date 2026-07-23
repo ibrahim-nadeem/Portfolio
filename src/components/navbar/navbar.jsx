@@ -22,6 +22,7 @@ const Navbar = () => {
   const handleScrollTo = (id) => {
     setMenuOpen(false);
 
+    // If user is on Contact page, go back to Home first
     if (location.pathname !== "/") {
       navigate("/");
 
@@ -48,108 +49,95 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <header className={scrolled ? "navbar navbar-scroll" : "navbar"}>
-        <div className="logo">
-          <h2 onClick={() => handleScrollTo("home")}>IBRAHIM</h2>
-        </div>
+    <header className={scrolled ? "navbar navbar-scroll" : "navbar"}>
+      <div className="logo">
+        <h2 onClick={() => handleScrollTo("home")}>IBRAHIM</h2>
+      </div>
 
-        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-          <li>
-            <a
-              href="/#home"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScrollTo("home");
-                window.history.pushState({}, "", "/#home");
-              }}
-            >
-              Home
-            </a>
-          </li>
+      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        <li>
+          <a
+            href="/#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("home");
+              window.history.pushState({}, "", "/#home");
+            }}
+          >
+            <span>Home</span>
+          </a>
+        </li>
 
-          <li>
-            <a
-              href="/#about"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScrollTo("about");
-                window.history.pushState({}, "", "/#about");
-              }}
-            >
-              About
-            </a>
-          </li>
+        <li>
+          <a
+            href="/#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("about");
+              window.history.pushState({}, "", "/#about");
+            }}
+          >
+            <span>About</span>
+          </a>
+        </li>
 
-          <li>
-            <a
-              href="/#experience"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScrollTo("experience");
-                window.history.pushState({}, "", "/#experience");
-              }}
-            >
-              Experience
-            </a>
-          </li>
+        <li>
+          <a
+            href="/#experience"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("experience");
+              window.history.pushState({}, "", "/#experience");
+            }}
+          >
+            <span>Experience</span>
+          </a>
+        </li>
 
-          <li>
-            <a
-              href="/#skills"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScrollTo("skills");
-                window.history.pushState({}, "", "/#skills");
-              }}
-            >
-              Skills
-            </a>
-          </li>
+        <li>
+          <a
+            href="/#skills"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("skills");
+              window.history.pushState({}, "", "/#skills");
+            }}
+          >
+            <span>Skills</span>
+          </a>
+        </li>
 
-          <li>
-            <a
-              href="/#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                handleScrollTo("projects");
-                window.history.pushState({}, "", "/#projects");
-              }}
-            >
-              Projects
-            </a>
-          </li>
-
-          {/* Mobile Hire Button */}
-          
-        </ul>
-
-        {/* Desktop Hire Button */}
+        <li>
+          <a
+            href="/#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollTo("projects");
+              window.history.pushState({}, "", "/#projects");
+            }}
+          >
+            <span>Projects</span>
+          </a>
+        </li>
+        
         <Link
           to="/contact"
-          className="hire-btn desktop-hire"
-        >
-          Hire Me
-        </Link>
-
-        <div
-          className={menuOpen ? "hamburger active" : "hamburger"}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </header>
-
-      {/* Overlay */}
-      {menuOpen && (
-        <div
-          className="nav-overlay"
           onClick={() => setMenuOpen(false)}
-        />
-      )}
-    </>
+          className="hire-btn"
+        >
+          <span>Hire Me</span>
+        </Link>
+      </ul>
+
+      <div
+        className={menuOpen ? "hamburger active" : "hamburger"}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
   );
 };
 
