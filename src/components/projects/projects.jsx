@@ -87,7 +87,7 @@ const projects = [
     title: "Landing Page",
 
     description:
-      "Interactive business landing page  with animations, glassmorphism and responsive UI.",
+      "Interactive business landing page   with animations, glassmorphism and responsive UI.",
 
     image: "/images/land.png",
 

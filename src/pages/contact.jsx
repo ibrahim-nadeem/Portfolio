@@ -241,7 +241,7 @@ const Contact = () => {
         <div className="contact-shell-wrapper">
           <div className="mascot">
             <img
-              src="/public/images/Gemini_Generated_Image_7h3e547h3e547h3e-removebg-preview.png"
+              src="/images/Gemini_Generated_Image_7h3e547h3e547h3e-removebg-preview.png"
               alt="AI assistant pointing toward the contact form"
               className="mascot-img"
             />
